@@ -1,22 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package espoch.edu.ec.pampara;
 
-/**
- *
- * @author SO-LAB-PC5
- */
 public class RegistroParticipantes extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistroParticipantes
      */
-    public RegistroParticipantes() {
-        initComponents();
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +18,7 @@ public class RegistroParticipantes extends javax.swing.JFrame {
         btngTurno = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
-        txfMostrarNombre = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         lblCategoria = new javax.swing.JLabel();
         cbxCategoria = new javax.swing.JComboBox<>();
         lblServicios = new javax.swing.JLabel();
@@ -38,7 +26,7 @@ public class RegistroParticipantes extends javax.swing.JFrame {
         ckxTransporte = new javax.swing.JCheckBox();
         ckxMaterialApoyo = new javax.swing.JCheckBox();
         lblTurno = new javax.swing.JLabel();
-        rbnMañana = new javax.swing.JRadioButton();
+        rbnManana = new javax.swing.JRadioButton();
         rbnTarde = new javax.swing.JRadioButton();
         btnRegistro = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
@@ -50,9 +38,9 @@ public class RegistroParticipantes extends javax.swing.JFrame {
 
         lblNombre.setText("NOMBRE DEL PARTICIPANTE:");
 
-        txfMostrarNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfMostrarNombreActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
 
@@ -69,6 +57,11 @@ public class RegistroParticipantes extends javax.swing.JFrame {
 
         btngServicios.add(ckxAlmuerzo);
         ckxAlmuerzo.setText("ALMUERZO");
+        ckxAlmuerzo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckxAlmuerzoActionPerformed(evt);
+            }
+        });
 
         btngServicios.add(ckxTransporte);
         ckxTransporte.setText("TRANSPORTE");
@@ -83,8 +76,8 @@ public class RegistroParticipantes extends javax.swing.JFrame {
 
         lblTurno.setText("TURNO DE ASISTENCIA");
 
-        btngTurno.add(rbnMañana);
-        rbnMañana.setText("MAÑANA");
+        btngTurno.add(rbnManana);
+        rbnManana.setText("MAÑANA");
 
         btngTurno.add(rbnTarde);
         rbnTarde.setText("TARDE");
@@ -97,6 +90,11 @@ public class RegistroParticipantes extends javax.swing.JFrame {
         });
 
         btnMostrar.setText("MOSTRAR REGISTRO");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
 
         lblMostrarResultados.setText("___________________________");
 
@@ -115,12 +113,12 @@ public class RegistroParticipantes extends javax.swing.JFrame {
                             .addComponent(lblTurno))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txfMostrarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ckxAlmuerzo)
-                                    .addComponent(rbnMañana))
+                                    .addComponent(rbnManana))
                                 .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rbnTarde)
@@ -150,7 +148,7 @@ public class RegistroParticipantes extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
-                    .addComponent(txfMostrarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCategoria)
@@ -164,7 +162,7 @@ public class RegistroParticipantes extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTurno)
-                    .addComponent(rbnMañana)
+                    .addComponent(rbnManana)
                     .addComponent(rbnTarde))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -178,56 +176,63 @@ public class RegistroParticipantes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txfMostrarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfMostrarNombreActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txfMostrarNombreActionPerformed
+
+        // Layout code omitted for brevity - use your existing layout code here        
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
         // TODO add your handling code here:
+        String nombre = txtNombre.getText();
+        String categoria = (String)cbxCategoria.getSelectedItem();
+        String almuerzo = Boolean.toString(ckxAlmuerzo.isSelected());
+        String transporte = Boolean.toString(ckxTransporte.isSelected());
+        String material = Boolean.toString(ckxMaterialApoyo.isSelected());
+        boolean turnoManana = rbnManana.isSelected();
+        boolean turnoTarde = rbnTarde.isSelected();
+        String turno="";
+        
+        if(turnoManana){
+            turno="mañana";
+        }else if(turnoTarde){
+            turno="tarde";
+        }
+        
+        String[] datosUsuario = new String[6];
+        datosUsuario[0]=nombre;
+        datosUsuario[1]=categoria;
+        datosUsuario[2]=almuerzo;
+        datosUsuario[3]=transporte;
+        datosUsuario[4]=material;
+        datosUsuario[5]=turno;
+        
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Datos: " +datosUsuario[i]);
+            
+        }
+
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void cbxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCategoriaActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_cbxCategoriaActionPerformed
 
     private void ckxMaterialApoyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckxMaterialApoyoActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_ckxMaterialApoyoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroParticipantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroParticipantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroParticipantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroParticipantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        // TODO add your handling code here:
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistroParticipantes().setVisible(true);
-            }
-        });
-    }
+    }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void ckxAlmuerzoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckxAlmuerzoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckxAlmuerzoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrar;
@@ -244,8 +249,8 @@ public class RegistroParticipantes extends javax.swing.JFrame {
     private javax.swing.JLabel lblServicios;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTurno;
-    private javax.swing.JRadioButton rbnMañana;
+    private javax.swing.JRadioButton rbnManana;
     private javax.swing.JRadioButton rbnTarde;
-    private javax.swing.JTextField txfMostrarNombre;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

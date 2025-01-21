@@ -41,12 +41,12 @@
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txfMostrarNombre" min="-2" pref="324" max="-2" attributes="0"/>
+                          <Component id="txtNombre" min="-2" pref="324" max="-2" attributes="0"/>
                           <Component id="cbxCategoria" min="-2" pref="180" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="ckxAlmuerzo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnMañana" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnManana" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -88,7 +88,7 @@
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txfMostrarNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -105,7 +105,7 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblTurno" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbnMañana" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbnManana" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="rbnTarde" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
@@ -131,9 +131,9 @@
         <Property name="text" type="java.lang.String" value="NOMBRE DEL PARTICIPANTE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txfMostrarNombre">
+    <Component class="javax.swing.JTextField" name="txtNombre">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfMostrarNombreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCategoria">
@@ -170,6 +170,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="ALMUERZO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckxAlmuerzoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ckxTransporte">
       <Properties>
@@ -195,7 +198,7 @@
         <Property name="text" type="java.lang.String" value="TURNO DE ASISTENCIA"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rbnMa&#xf1;ana">
+    <Component class="javax.swing.JRadioButton" name="rbnManana">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="btngTurno"/>
@@ -223,6 +226,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="MOSTRAR REGISTRO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblMostrarResultados">
       <Properties>
